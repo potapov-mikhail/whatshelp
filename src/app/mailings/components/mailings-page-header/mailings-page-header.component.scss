@@ -1,0 +1,31 @@
+@import "../../../../vars";
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mat-h2 {
+    margin: 0;
+  }
+}
+
+.title-icon {
+  padding-right: 5px;
+}
+
+.divider {
+  margin-top: $defaultPagePaddingY;
+  margin-bottom: $defaultPagePaddingY;
+}
+
+.link {
+  padding-right: $defaultElementPaddingY;
+  color: var(--blueText);
+  text-decoration: none;
+}

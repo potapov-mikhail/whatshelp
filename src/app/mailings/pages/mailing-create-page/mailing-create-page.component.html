@@ -1,0 +1,71 @@
+<div class="root">
+  <div class="header">
+    <span class="mat-h2">Новая рассылка</span>
+    <div>
+      <button
+        class="header-button"
+        mat-button
+        color="primary"
+        [routerLink]="['/mailings']"
+      >
+        Отмена
+      </button>
+      <button
+        class="header-button"
+        mat-flat-button
+        color="primary"
+        (click)="handleSaveAndClose()"
+      >
+        СОХРАНИТЬ И ЗАКРЫТЬ
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <mat-horizontal-stepper
+      [linear]="true"
+      [selectedIndex]="selectedStepIndex"
+      (selectionChange)="handleSelectionChange($event)"
+    >
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+        <ng-template matStepLabel>Сообщение</ng-template>
+        <message-form [form]="firstFormGroup"></message-form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Сегментация</ng-template>
+        <segmentation-form
+          [form]="secondFormGroup"
+          [subscribers]="subscribers"
+        ></segmentation-form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Отправка</ng-template>
+        <sending-form
+          [form]="thirdFormGroup"
+          [subscribers]="subscribers"
+          (submited)="handleSubmit()"
+        ></sending-form>
+      </mat-step>
+    </mat-horizontal-stepper>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="footer">
+    <button
+      *ngIf="!isFirstStep"
+      class="footer-button"
+      mat-button
+      color="primary"
+      (click)="prevStep()"
+    >
+      Назад
+    </button>
+    <button
+      *ngIf="!isLastStep"
+      class="footer-button"
+      mat-flat-button
+      color="primary"
+      (click)="nextStep()"
+    >
+      Далее
+    </button>
+  </div>
+</div>

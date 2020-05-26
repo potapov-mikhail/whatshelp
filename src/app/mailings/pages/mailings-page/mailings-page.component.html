@@ -1,0 +1,9 @@
+<div class="root">
+  <mailings-page-header></mailings-page-header>
+  <mailings-page-filters></mailings-page-filters>
+  <div class="count mat-h2 py-2">{{ count }} Рассылки</div>
+</div>
+<mailings-list
+  [mailings]="mailings"
+  (onEvent)="handleEvent($event)"
+></mailings-list>

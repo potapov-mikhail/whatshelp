@@ -1,0 +1,37 @@
+@import "../../../../vars";
+
+$borderColor: rgb(224, 224, 224);
+
+.root {
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    width: 50% !important;
+  }
+
+  ::ng-deep .mat-horizontal-content-container {
+    border-top: 1px solid $borderColor;
+    padding: 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: $defaultPagePadding;
+  padding-right: $defaultPagePadding;
+
+  &-button {
+    margin-left: 10px;
+  }
+}
+
+.footer {
+  padding: $defaultPagePaddingX $defaultPagePaddingY;
+
+  > .footer-button {
+    margin-right: 10px;
+  }
+}

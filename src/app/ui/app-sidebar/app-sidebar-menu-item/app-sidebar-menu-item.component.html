@@ -1,0 +1,9 @@
+<a
+  *ngIf="menuItem"
+  class="root"
+  (click)="handleClick()"
+  [routerLink]="menuItem.path"
+>
+  <img class="image" [src]="imgSrc" [alt]="menuItem.name" />
+  <div class="title">{{ menuItem.name }}</div>
+</a>

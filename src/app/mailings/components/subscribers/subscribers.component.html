@@ -1,0 +1,18 @@
+<div *ngIf="subscribers.length; else notSubscribers">
+  <mat-list>
+    <mat-list-item *ngFor="let subscriber of subscribers">
+      <mat-icon>account_circle</mat-icon>
+      {{ subscriber.username }}</mat-list-item
+    >
+  </mat-list>
+</div>
+
+<ng-template #notSubscribers>
+  <div class="not-subscribers-card">
+    <img src="../../../../assets/no-sub.png" alt="no-sub" />
+    <div class="mat-h3">
+      0 подписчиков которые соответвуют этим правилам
+    </div>
+    <div class="mat-caption">Уточните сегиментацию</div>
+  </div>
+</ng-template>

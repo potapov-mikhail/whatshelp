@@ -1,0 +1,24 @@
+.message-card {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fafafa;
+
+  &-bottom {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.test-message-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tools-buttons {
+  > button {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+}

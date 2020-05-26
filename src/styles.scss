@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --lightColor: #fff;
+  --grayColor: #fafafa;
+  --greenColor: rgb(70, 179, 94);
+  --grayTextColor: #747474;
+  --blueText: cornflowerblue;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$headerPaddingY: 24px;
+$borderColor: rgb(224, 224, 224);
+
+.content {
+  height: 100%;
+  display: flex;
+
+  &-left {
+    padding: $headerPaddingY;
+    width: 50%;
+    border-right: 1px solid $borderColor;
+  }
+
+  &-right {
+    padding: $headerPaddingY;
+    width: 50%;
+  }
+}
+
+.py-2 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.mx-1 {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: var(--grayTextColor);
+}
+
+.form-filed-full {
+  width: 100%;
+}

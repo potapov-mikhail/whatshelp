@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="content-left">
+    <form [formGroup]="form">
+      <h4>Выберите канал</h4>
+      <mat-form-field appearance="outline" class="form-filed-full">
+        <mat-label>Не выбран</mat-label>
+        <mat-select formControlName="channel">
+          <mat-option *ngFor="let channel of channels" [value]="channel.value">
+            {{ channel.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <h3>Выберите подписчиков, используя правила</h3>
+      <mat-form-field appearance="outline" class="form-filed-full">
+        <mat-label>Подписчики, которые соответсвуют</mat-label>
+        <mat-select formControlName="rules">
+          <mat-option *ngFor="let rule of rules" [value]="rule.value">
+            {{ rule.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <div>
+      <button mat-stroked-button color="primary">
+        <mat-icon>add</mat-icon>
+        Добавить правило
+      </button>
+    </div>
+  </div>
+
+  <div class="content-right">
+    <subscribers [subscribers]="subscribers"></subscribers>
+  </div>
+</div>

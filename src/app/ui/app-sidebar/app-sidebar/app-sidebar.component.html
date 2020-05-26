@@ -1,0 +1,25 @@
+<div class="root" *ngIf="menuItems$ | async as menuItems">
+  <div class="main-menu">
+    <div
+      *ngFor="let menuItem of menuItems"
+      class="menu-item"
+      [routerLink]="menuItem.path"
+      routerLinkActive="active-menu-item"
+    >
+      <mat-icon>{{ menuItem.icon }}</mat-icon>
+    </div>
+  </div>
+  <div class="sub-menu">
+    <div class="mat-h2 text-center text-bold">Инструменты роста</div>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let submenuItem of submenuItem$ | async"
+        [routerLink]="submenuItem.path"
+        [queryParams]="{ filter: submenuItem.queryParams }"
+        routerLinkActive="active-submenu-item"
+      >
+        {{ submenuItem.displayName }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

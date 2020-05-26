@@ -1,0 +1,30 @@
+<div class="root">
+  <div class="header-top">
+    <div class="header-title">
+      <mat-icon class="title-icon">send</mat-icon>
+      <span class="mat-h2">Отправленные</span>
+    </div>
+    <div>
+      <button mat-icon-button color="primary" aria-label="filters">
+        <mat-icon class="text-gray">filter_list</mat-icon>
+      </button>
+      <button
+        mat-flat-button
+        color="primary"
+        [routerLink]="['/mailings/create']"
+      >
+        НОВАЯ РАССЫЛКА
+      </button>
+    </div>
+  </div>
+  <div class="header-description mat-body text-gray">
+    Вы находитесь в разделе рассылок. Вы можете ее осущесить по вашей базе
+    пользователей.
+  </div>
+  <div class="header-links py-2">
+    <a *ngFor="let link of links" [routerLink]="link.path" class="link">
+      {{ link.title }}
+    </a>
+  </div>
+  <mat-divider class="divider"></mat-divider>
+</div>

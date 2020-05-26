@@ -1,0 +1,70 @@
+<div class="content">
+  <div class="content-left">
+    <div class="mat-h3 text-bold">Создайте сообщение</div>
+    <div class="message-card">
+      <div class="mat-h3 text-bold">Текстовое сообщение</div>
+      <form [formGroup]="form">
+        <mat-form-field appearance="outline" class="form-filed-full">
+          <mat-label>Текст сообщения</mat-label>
+          <textarea formControlName="message" matInput></textarea>
+          <mat-hint align="end">
+            {{ currentSymbolsCount }}/{{ displayMaxSymbolCount }}</mat-hint
+          >
+        </mat-form-field>
+      </form>
+      <div class="message-card-bottom">
+        <button mat-button matStepperPrevious color="primary">
+          Добавить кнопку
+        </button>
+      </div>
+    </div>
+    <div class="py-2">
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>reply</mat-icon>
+        Быстрый ответ
+      </button>
+    </div>
+    <div class="mat-h3 text-bold">Добавить карточку</div>
+    <div class="tools-buttons">
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>comment</mat-icon>
+        ТЕКСТ
+      </button>
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>image</mat-icon>
+        КАРТИНКА
+      </button>
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>attach_file</mat-icon>
+        ФАЙЛ
+      </button>
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>help_outline</mat-icon>
+        ВОПРОС
+      </button>
+      <button mat-stroked-button matStepperPrevious color="primary">
+        <mat-icon>ondemand_video</mat-icon>
+        ВИДЕО
+      </button>
+    </div>
+  </div>
+  <div class="content-right">
+    <div class="test-message-card">
+      <img src="/assets/message-test.png" alt="message-test" />
+      <div class="mat-h3">
+        Протестируйте перед отправкой
+      </div>
+      <div class="mat-caption text-center">
+        Для отправки сообщения разрешите все доступы, <br />
+        которые запрашивает платформа
+      </div>
+
+      <div class="py-2">
+        <button mat-stroked-button matStepperPrevious color="primary">
+          <mat-icon>reply</mat-icon>
+          ОТПРАВИТЬ СЕБЕ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

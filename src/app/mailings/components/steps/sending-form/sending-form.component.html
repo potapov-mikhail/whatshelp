@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="content-left">
+    <h4>Мы отправим это сообщение 25 пользователям</h4>
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Введите заголовок</mat-label>
+        <input type="text" matInput formControlName="title" />
+      </mat-form-field>
+      <h3>Выберите подписчиков, используя правила</h3>
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Тег сообщения для Facebook</mat-label>
+        <mat-select formControlName="tagForFacebook">
+          <mat-option *ngFor="let tag of tags" [value]="tag.value">
+            {{ tag.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <label id="example-radio-group-label">Время отправки</label>
+      <mat-radio-group
+        color="primary"
+        formControlName="time"
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+      >
+        <mat-radio-button
+          *ngFor="let time of times"
+          [value]="time.value"
+          class="example-radio-button"
+        >
+          {{ time.name }}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <div>
+        <button mat-flat-button class="button-submit" (click)="handleSubmit()">
+          Отправить сейчас
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="content-right">
+    <div class="result-card">
+      <div class="mat-h3 text-bold text-center">Мы готовы к отправке</div>
+      <div class="text-gray text-center">
+        Сообщение будет отправленно {{ subscribers.length }} пользователям.
+      </div>
+    </div>
+  </div>
+</div>
